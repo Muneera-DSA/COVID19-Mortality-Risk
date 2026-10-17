@@ -1,0 +1,498 @@
+{
+  "facts": {
+    "rows": 199999,
+    "deaths": 41407,
+    "death_rate": 0.2070360351801759,
+    "exact_duplicate_rows": 125590,
+    "duplicates_by_outcome": {
+      "survivors": {
+        "rows": 158592,
+        "distinct": 33607,
+        "share_with_identical_row": 0.8646905266343826,
+        "largest_identical_group": 552
+      },
+      "deaths": {
+        "rows": 41407,
+        "distinct": 40802,
+        "share_with_identical_row": 0.028570048542516966,
+        "largest_identical_group": 3
+      }
+    },
+    "after_dropping_duplicates": {
+      "rows": 74409,
+      "death_rate": 0.5483476461180771,
+      "survivors_removed": 124985,
+      "deaths_removed": 605
+    },
+    "icu_identical_to_hospitalised": true,
+    "intubation_code3_equals_outpatient": true,
+    "death_rate_intubation_unknown": 0.7451963241436925,
+    "pneumonia_missing_code_99": 4756,
+    "max_comorbidity_score_original_formula": 108,
+    "rows_with_score_inflated_by_99": 4756,
+    "death_rate_by_classification": {
+      "1": {
+        "rate": 0.39436619718309857,
+        "n": 355
+      },
+      "2": {
+        "rate": 1.0,
+        "n": 1249
+      },
+      "3": {
+        "rate": 0.2039886934673367,
+        "n": 133728
+      },
+      "4": {
+        "rate": 0.18041237113402062,
+        "n": 194
+      },
+      "5": {
+        "rate": 0.08601983880967141,
+        "n": 6452
+      },
+      "6": {
+        "rate": 0.10794534894791964,
+        "n": 42012
+      },
+      "7": {
+        "rate": 0.4756074707976763,
+        "n": 16009
+      }
+    },
+    "death_dates": [
+      "2020-01-02",
+      "2021-05-02"
+    ],
+    "medical_unit_values": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "flaw_by_flaw": {
+    "S0_original_as_published": {
+      "n": 14882,
+      "death_rate": 0.548380594006182,
+      "accuracy_at_0.5": 0.8234108318774358,
+      "roc_auc": 0.900987931084368,
+      "roc_auc_ci": [
+        0.8961504250932452,
+        0.9058254370754909
+      ],
+      "pr_auc": 0.9103814187419565,
+      "pr_auc_ci": [
+        0.9050075248583758,
+        0.9166710505200398
+      ],
+      "brier": 0.12653567026814488,
+      "ece": 0.032267974200890136,
+      "mean_predicted_risk": 0.5261789255061703,
+      "calibration_intercept": 0.15838601504765965,
+      "calibration_slope": 1.160660394742783,
+      "share_predicted_to_die": 0.5642386775970971,
+      "features": [
+        "SEX",
+        "PREGNANT",
+        "DIABETES",
+        "COPD",
+        "ASTHMA",
+        "INMSUPR",
+        "HYPERTENSION",
+        "OTHER_DISEASE",
+        "CARDIOVASCULAR",
+        "OBESITY",
+        "RENAL_CHRONIC",
+        "TOBACCO",
+        "CLASSIFICATION_FINAL",
+        "ICU",
+        "COMORBIDITY_SCORE_LOG",
+        "COMORBIDITY_SCORE_SQRT",
+        "PNEUMONIA_ORDINAL",
+        "PATIENT_TYPE_ORDINAL",
+        "INTUBED_ORDINAL",
+        "AGEGROUP_0-18",
+        "AGEGROUP_19-40",
+        "AGEGROUP_41-60",
+        "AGEGROUP_61+",
+        "CLASSIFICATION_FINAL_SEVERITY_SEVERE"
+      ]
+    },
+    "S1_original_model_on_real_patients": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.882525,
+      "roc_auc": 0.9461936196236608,
+      "roc_auc_ci": [
+        0.9437741655494137,
+        0.9486130736979078
+      ],
+      "pr_auc": 0.8373006117155428,
+      "pr_auc_ci": [
+        0.8299937227478877,
+        0.844916862792785
+      ],
+      "brier": 0.0821974186982969,
+      "ece": 0.08831141074893754,
+      "mean_predicted_risk": 0.2926755297170946,
+      "calibration_intercept": -0.8230458452995189,
+      "calibration_slope": 1.4061612210855865,
+      "share_predicted_to_die": 0.25945
+    },
+    "S2_keep_all_patients": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.8762,
+      "roc_auc": 0.9539356644262049,
+      "roc_auc_ci": [
+        0.9518319630899923,
+        0.9560393657624175
+      ],
+      "pr_auc": 0.8498215460634948,
+      "pr_auc_ci": [
+        0.8428079828174196,
+        0.8569026610499068
+      ],
+      "brier": 0.08507137887663511,
+      "ece": 0.08897698242980576,
+      "mean_predicted_risk": 0.2960019824298058,
+      "calibration_intercept": -1.1804143096594073,
+      "calibration_slope": 1.0714119995798346,
+      "share_predicted_to_die": 0.288425
+    },
+    "S3_remove_post_triage_leakage": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.8238,
+      "roc_auc": 0.903487043435575,
+      "roc_auc_ci": [
+        0.9001215585186519,
+        0.906852528352498
+      ],
+      "pr_auc": 0.7104672515951268,
+      "pr_auc_ci": [
+        0.7006779534639365,
+        0.7204073765170577
+      ],
+      "brier": 0.12459641558781273,
+      "ece": 0.1371495697884084,
+      "mean_predicted_risk": 0.3441745697884084,
+      "calibration_intercept": -1.252640870081142,
+      "calibration_slope": 1.0411676130793954,
+      "share_predicted_to_die": 0.319575
+    },
+    "S4_no_smote": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.862475,
+      "roc_auc": 0.9041964526539064,
+      "roc_auc_ci": [
+        0.9008343192170667,
+        0.907558586090746
+      ],
+      "pr_auc": 0.7158489631091636,
+      "pr_auc_ci": [
+        0.7066707424824482,
+        0.7258106482492692
+      ],
+      "brier": 0.09543345111362292,
+      "ece": 0.009489870287183103,
+      "mean_predicted_risk": 0.20549565460155186,
+      "calibration_intercept": 0.01589955217732891,
+      "calibration_slope": 1.0339998024735204,
+      "share_predicted_to_die": 0.15255
+    },
+    "S4b_remove_outcome_defined_code": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.84905,
+      "roc_auc": 0.8895870778600269,
+      "roc_auc_ci": [
+        0.8859510832105052,
+        0.8932230725095486
+      ],
+      "pr_auc": 0.6519973581771726,
+      "pr_auc_ci": [
+        0.6405083580806367,
+        0.6643815821763404
+      ],
+      "brier": 0.10262350052298766,
+      "ece": 0.008064216373578724,
+      "mean_predicted_risk": 0.2055718970865667,
+      "calibration_intercept": 0.014181574109375865,
+      "calibration_slope": 1.0140842539495367,
+      "share_predicted_to_die": 0.158625
+    },
+    "S5_correct_coding_and_age": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.85605,
+      "roc_auc": 0.8986943405132801,
+      "roc_auc_ci": [
+        0.8952486123171575,
+        0.9021400687094028
+      ],
+      "pr_auc": 0.6795192490273296,
+      "pr_auc_ci": [
+        0.6688980706274599,
+        0.6901403254408363
+      ],
+      "brier": 0.09920172262074904,
+      "ece": 0.0048425644683750425,
+      "mean_predicted_risk": 0.20477966377390022,
+      "calibration_intercept": 0.022634600560671417,
+      "calibration_slope": 1.0045971850213924,
+      "share_predicted_to_die": 0.187425,
+      "features": [
+        "age",
+        "female",
+        "pregnant",
+        "diabetes",
+        "copd",
+        "asthma",
+        "immunosuppression",
+        "hypertension",
+        "other_disease",
+        "cardiovascular",
+        "obesity",
+        "chronic_kidney",
+        "smoking",
+        "pneumonia",
+        "pneumonia_missing"
+      ]
+    },
+    "S6_corrected_plus_post_triage": {
+      "n": 40000,
+      "death_rate": 0.207025,
+      "accuracy_at_0.5": 0.891325,
+      "roc_auc": 0.9459371484912387,
+      "roc_auc_ci": [
+        0.9436858269001115,
+        0.9481884700823658
+      ],
+      "pr_auc": 0.8158252710159928,
+      "pr_auc_ci": [
+        0.8073710693287501,
+        0.8240265149080427
+      ],
+      "brier": 0.07435227946929467,
+      "ece": 0.004435010727494953,
+      "mean_predicted_risk": 0.2049085171447952,
+      "calibration_intercept": 0.02821361770135538,
+      "calibration_slope": 1.010666658357754,
+      "share_predicted_to_die": 0.19515
+    },
+    "leakage_test": {
+      "auc_a": 0.9459371484912387,
+      "auc_b": 0.8986943405132801,
+      "diff": 0.047242807977958545,
+      "ci": [
+        0.04462008355352311,
+        0.04986553240239398
+      ],
+      "z": 35.30523556882298,
+      "p": 4.8806470869762025e-273
+    },
+    "leakage_pr_auc": {
+      "value": 0.13630602198866315,
+      "ci": [
+        0.12790432618430111,
+        0.1443074253790449
+      ],
+      "p": 0.0033333333333333335
+    }
+  },
+  "corrected_confirmed": {
+    "n_patients": 134083,
+    "death_rate": 0.2044927395717578,
+    "features": [
+      "age",
+      "female",
+      "pregnant",
+      "diabetes",
+      "copd",
+      "asthma",
+      "immunosuppression",
+      "hypertension",
+      "other_disease",
+      "cardiovascular",
+      "obesity",
+      "chronic_kidney",
+      "smoking",
+      "pneumonia",
+      "pneumonia_missing"
+    ],
+    "age_only": {
+      "n": 26817,
+      "death_rate": 0.20449714733191632,
+      "accuracy_at_0.5": 0.8223887832345155,
+      "roc_auc": 0.8315197493683486,
+      "roc_auc_ci": [
+        0.8257169035867747,
+        0.8373225951499225
+      ],
+      "pr_auc": 0.5373210239508718,
+      "pr_auc_ci": [
+        0.5226449485563472,
+        0.5521802748040103
+      ],
+      "brier": 0.12173508071311251,
+      "ece": 0.006643854779540936,
+      "mean_predicted_risk": 0.20462630689144135,
+      "calibration_intercept": -0.001058252153504093,
+      "calibration_slope": 1.0073540248682638,
+      "share_predicted_to_die": 0.13152105008017304,
+      "capacity": [
+        {
+          "share_flagged": 0.05,
+          "deaths_captured": 0.16356673960612692,
+          "death_rate_in_flagged": 0.668903803131991,
+          "risk_cutoff": 0.6354560852050781
+        },
+        {
+          "share_flagged": 0.1,
+          "deaths_captured": 0.3054339897884756,
+          "death_rate_in_flagged": 0.6245339299030574,
+          "risk_cutoff": 0.5455406904220581
+        },
+        {
+          "share_flagged": 0.2,
+          "deaths_captured": 0.5437636761487965,
+          "death_rate_in_flagged": 0.5560320716017154,
+          "risk_cutoff": 0.3942660391330719
+        },
+        {
+          "share_flagged": 0.3,
+          "deaths_captured": 0.7107950401167031,
+          "death_rate_in_flagged": 0.4845245494095712,
+          "risk_cutoff": 0.2687179446220398
+        }
+      ]
+    },
+    "logistic": {
+      "n": 26817,
+      "death_rate": 0.20449714733191632,
+      "accuracy_at_0.5": 0.8484170488869001,
+      "roc_auc": 0.8878310820843993,
+      "roc_auc_ci": [
+        0.8833805771234517,
+        0.8922815870453469
+      ],
+      "pr_auc": 0.6462289245006696,
+      "pr_auc_ci": [
+        0.6314676558881936,
+        0.6590776470097994
+      ],
+      "brier": 0.10416148054747756,
+      "ece": 0.02012956089285244,
+      "mean_predicted_risk": 0.20446230471134186,
+      "calibration_intercept": 0.0003440999816302679,
+      "calibration_slope": 0.9977659778120721,
+      "share_predicted_to_die": 0.1559085654622068,
+      "capacity": [
+        {
+          "share_flagged": 0.05,
+          "deaths_captured": 0.18909555069292489,
+          "death_rate_in_flagged": 0.773303504847129,
+          "risk_cutoff": 0.7748245596885681
+        },
+        {
+          "share_flagged": 0.1,
+          "deaths_captured": 0.36050328227571116,
+          "death_rate_in_flagged": 0.7371364653243848,
+          "risk_cutoff": 0.6527662873268127
+        },
+        {
+          "share_flagged": 0.2,
+          "deaths_captured": 0.6114150255288111,
+          "death_rate_in_flagged": 0.6252097706507552,
+          "risk_cutoff": 0.4032208323478699
+        },
+        {
+          "share_flagged": 0.3,
+          "deaths_captured": 0.7933989788475565,
+          "death_rate_in_flagged": 0.5408328154133002,
+          "risk_cutoff": 0.22971224784851074
+        }
+      ]
+    },
+    "hgb": {
+      "n": 26817,
+      "death_rate": 0.20449714733191632,
+      "accuracy_at_0.5": 0.847559383972853,
+      "roc_auc": 0.8894478161806617,
+      "roc_auc_ci": [
+        0.8850701214390962,
+        0.8938255109222272
+      ],
+      "pr_auc": 0.6503165128642744,
+      "pr_auc_ci": [
+        0.6359816543081152,
+        0.6627972590907463
+      ],
+      "brier": 0.10307589440093841,
+      "ece": 0.00645721314482421,
+      "mean_predicted_risk": 0.20442295894074908,
+      "calibration_intercept": 0.0007274701399398107,
+      "calibration_slope": 0.9816584153240192,
+      "share_predicted_to_die": 0.17787224521758585,
+      "capacity": [
+        {
+          "share_flagged": 0.05,
+          "deaths_captured": 0.18964259664478483,
+          "death_rate_in_flagged": 0.7755406413124534,
+          "risk_cutoff": 0.7246020472058982
+        },
+        {
+          "share_flagged": 0.1,
+          "deaths_captured": 0.35776805251641136,
+          "death_rate_in_flagged": 0.7315436241610739,
+          "risk_cutoff": 0.6308210445015967
+        },
+        {
+          "share_flagged": 0.2,
+          "deaths_captured": 0.613420860685631,
+          "death_rate_in_flagged": 0.6272608614581391,
+          "risk_cutoff": 0.46212237824231994
+        },
+        {
+          "share_flagged": 0.3,
+          "deaths_captured": 0.7964989059080962,
+          "death_rate_in_flagged": 0.5429459291485395,
+          "risk_cutoff": 0.2725371384303256
+        }
+      ]
+    },
+    "logistic_vs_age_only": {
+      "auc_a": 0.8878310820843993,
+      "auc_b": 0.8315197493683486,
+      "diff": 0.05631133271605071,
+      "ci": [
+        0.05228618349190005,
+        0.06033648194020137
+      ],
+      "z": 27.420154130248,
+      "p": 1.577306744223054e-165
+    },
+    "hgb_vs_logistic": {
+      "auc_a": 0.8894478161806617,
+      "auc_b": 0.8878310820843993,
+      "diff": 0.0016167340962623955,
+      "ci": [
+        0.000707394893174231,
+        0.00252607329935056
+      ],
+      "z": 3.484726951079295,
+      "p": 0.0004926394825083384
+    },
+    "hgb_vs_logistic_pr_auc": {
+      "value": 0.004087588363604788,
+      "ci": [
+        -0.0006408330573721505,
+        0.008721825442498393
+      ],
+      "p": 0.12666666666666668
+    }
+  }
+}

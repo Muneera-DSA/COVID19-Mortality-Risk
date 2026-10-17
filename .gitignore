@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.ipynb_checkpoints/
+.DS_Store
+
+# downloaded data, cohort and models are reproducible - never committed
+artifacts/
+data/official_raw/
+data/covid_capstone.csv
+results_bundle.zip
+*.joblib
+*.pkl

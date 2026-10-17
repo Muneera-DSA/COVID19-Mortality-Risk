@@ -1,0 +1,92 @@
+{
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "Triage features add to age alone (logistic vs age-only, 2021 test)",
+      "evidence": "ROC-AUC +0.085 (CI +0.084 to +0.086)",
+      "p": 0.0,
+      "ok": true,
+      "p_holm": 0.0,
+      "verdict": "supported"
+    },
+    {
+      "id": "H2",
+      "text": "Gradient boosting beats logistic regression (2021 test)",
+      "evidence": "ROC-AUC +0.003 (CI +0.003 to +0.003)",
+      "p": 0.0,
+      "ok": true,
+      "p_holm": 0.0,
+      "verdict": "supported"
+    },
+    {
+      "id": "H3a",
+      "text": "Class weight improves PR-AUC (gradient boosting, 5-fold CV)",
+      "evidence": "PR-AUC +0.0013; calibration slope 1.01",
+      "p": 0.40902030057110106,
+      "ok": true,
+      "p_holm": 0.8180406011422021,
+      "verdict": "not supported"
+    },
+    {
+      "id": "H3b",
+      "text": "Oversample improves PR-AUC (gradient boosting, 5-fold CV)",
+      "evidence": "PR-AUC -0.0018; calibration slope 0.98",
+      "p": 0.45398341885454285,
+      "ok": false,
+      "p_holm": 0.8180406011422021,
+      "verdict": "not supported"
+    },
+    {
+      "id": "H3c",
+      "text": "Smote improves PR-AUC (gradient boosting, 5-fold CV)",
+      "evidence": "PR-AUC -0.0135; calibration slope 0.96",
+      "p": 0.02981661207597434,
+      "ok": false,
+      "p_holm": 0.08944983622792302,
+      "verdict": "not supported"
+    },
+    {
+      "id": "H4",
+      "text": "Calibration drifts from 2020 to 2021 (calibration-in-the-large \u2260 0)",
+      "evidence": "intercept -0.049; predicted 5.8% vs observed 5.7%",
+      "p": 2.3767516218649388e-45,
+      "ok": true,
+      "p_holm": 9.507006487459755e-45,
+      "verdict": "supported"
+    },
+    {
+      "id": "H5",
+      "text": "Post-triage variables (hospitalisation, ICU, intubation) inflate ROC-AUC",
+      "evidence": "0.980 vs 0.949 (+0.031)",
+      "p": 0.0,
+      "ok": true,
+      "p_holm": 0.0,
+      "verdict": "supported"
+    },
+    {
+      "id": "H6",
+      "text": "Discrimination differs between women and men",
+      "evidence": "ROC-AUC difference (F \u2212 M) +0.008",
+      "p": 1.5343984646978237e-49,
+      "ok": true,
+      "p_holm": 7.671992323489118e-49,
+      "verdict": "supported"
+    }
+  ],
+  "figures": [
+    "calibration_2021.png",
+    "drift_2021.png",
+    "decision_curve.png",
+    "monitoring.png",
+    "states_iecv.png",
+    "eda_age_month.png",
+    "eda_conditions.png",
+    "eda_states.png",
+    "eda_correlation.png",
+    "eda_sex_age.png",
+    "benchmark.png",
+    "shap_importance.png",
+    "odds_ratios.png",
+    "capstone_flaws.png"
+  ]
+}

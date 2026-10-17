@@ -1,0 +1,308 @@
+{
+  "records_checked": 4089784,
+  "records_read": 12698741,
+  "completeness": [
+    {
+      "field": "INTUBADO",
+      "scope": 624571,
+      "missing": 5568,
+      "share_missing": 0.00891491920053925,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "UCI",
+      "scope": 624571,
+      "missing": 5564,
+      "share_missing": 0.00890851480456185,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "OTRA_COM",
+      "scope": 4089784,
+      "missing": 30218,
+      "share_missing": 0.007388654266337782,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "EMBARAZO",
+      "scope": 2062844,
+      "missing": 12616,
+      "share_missing": 0.006115828438796147,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "NEUMONIA",
+      "scope": 4089784,
+      "missing": 14431,
+      "share_missing": 0.0035285482069468705,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "DIABETES",
+      "scope": 4089784,
+      "missing": 9971,
+      "share_missing": 0.0024380260669023108,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "TABAQUISMO",
+      "scope": 4089784,
+      "missing": 9690,
+      "share_missing": 0.0023693182818456918,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "INMUSUPR",
+      "scope": 4089784,
+      "missing": 9394,
+      "share_missing": 0.0022969428214301784,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "HIPERTENSION",
+      "scope": 4089784,
+      "missing": 9386,
+      "share_missing": 0.0022949867279054344,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "CARDIOVASCULAR",
+      "scope": 4089784,
+      "missing": 9361,
+      "share_missing": 0.002288873935640611,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "EPOC",
+      "scope": 4089784,
+      "missing": 9328,
+      "share_missing": 0.0022808050498510433,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "RENAL_CRONICA",
+      "scope": 4089784,
+      "missing": 9274,
+      "share_missing": 0.002267601418559024,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "ASMA",
+      "scope": 4089784,
+      "missing": 9183,
+      "share_missing": 0.0022453508547150658,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "OBESIDAD",
+      "scope": 4089784,
+      "missing": 8838,
+      "share_missing": 0.002160994321460498,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "EDAD",
+      "scope": 4089784,
+      "missing": 32,
+      "share_missing": 7.82437409897442e-06,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "SECTOR",
+      "scope": 4089784,
+      "missing": 23,
+      "share_missing": 5.623768883637864e-06,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "SEXO",
+      "scope": 4089784,
+      "missing": 0,
+      "share_missing": 0.0,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "TIPO_PACIENTE",
+      "scope": 4089784,
+      "missing": 0,
+      "share_missing": 0.0,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "ENTIDAD_UM",
+      "scope": 4089784,
+      "missing": 0,
+      "share_missing": 0.0,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "FECHA_INGRESO",
+      "scope": 4089784,
+      "missing": 0,
+      "share_missing": 0.0,
+      "outside_catalogue": 0
+    },
+    {
+      "field": "FECHA_SINTOMAS",
+      "scope": 4089784,
+      "missing": 0,
+      "share_missing": 0.0,
+      "outside_catalogue": 0
+    }
+  ],
+  "checks": [
+    {
+      "check": "outpatient recorded in ICU",
+      "kind": "inconsistent",
+      "records": 0,
+      "share": 0.0
+    },
+    {
+      "check": "outpatient recorded as intubated",
+      "kind": "inconsistent",
+      "records": 0,
+      "share": 0.0
+    },
+    {
+      "check": "male recorded as pregnant",
+      "kind": "inconsistent",
+      "records": 0,
+      "share": 0.0
+    },
+    {
+      "check": "symptoms after attendance",
+      "kind": "inconsistent",
+      "records": 1,
+      "share": 2.4451169059295064e-07
+    },
+    {
+      "check": "symptoms > 30 days before attendance",
+      "kind": "inconsistent",
+      "records": 1450,
+      "share": 0.00035454195135977844
+    },
+    {
+      "check": "attendance after file date",
+      "kind": "inconsistent",
+      "records": 0,
+      "share": 0.0
+    },
+    {
+      "check": "age over 110",
+      "kind": "implausible",
+      "records": 307,
+      "share": 7.506508901203585e-05
+    }
+  ],
+  "drift_2020_to_2021": [
+    {
+      "feature": "age",
+      "development": 43.76506990147901,
+      "test": 39.30802835537968,
+      "smd": -0.2611743605027869
+    },
+    {
+      "feature": "pneumonia",
+      "development": 0.15339491226259563,
+      "test": 0.0885761335307757,
+      "smd": -0.19975210555904882
+    },
+    {
+      "feature": "days_symptoms_to_visit",
+      "development": 4.078290185742374,
+      "test": 3.4589494074654787,
+      "smd": -0.19598363118546558
+    },
+    {
+      "feature": "obesity",
+      "development": 0.15546496457954584,
+      "test": 0.09908537723522605,
+      "smd": -0.16977368103194662
+    },
+    {
+      "feature": "hypertension",
+      "development": 0.1782110619785175,
+      "test": 0.11972598648598201,
+      "smd": -0.16481415633207278
+    },
+    {
+      "feature": "diabetes",
+      "development": 0.1380603828108254,
+      "test": 0.09165640049277635,
+      "smd": -0.14592182788227545
+    },
+    {
+      "feature": "died",
+      "development": 0.09423865209095793,
+      "test": 0.05653903427450297,
+      "smd": -0.14315727881098256
+    },
+    {
+      "feature": "pneumonia_missing",
+      "development": 1.9847097957336676e-06,
+      "test": 0.0055462226702007195,
+      "smd": 0.10555715901439092
+    },
+    {
+      "feature": "cardiovascular",
+      "development": 0.01696397619406757,
+      "test": 0.009223379500006222,
+      "smd": -0.06813297978527923
+    },
+    {
+      "feature": "chronic_kidney",
+      "development": 0.0160285163103451,
+      "test": 0.00941501474595886,
+      "smd": -0.05903736855202463
+    },
+    {
+      "feature": "smoking",
+      "development": 0.07487317704405262,
+      "test": 0.0602394196189694,
+      "smd": -0.05833055783849879
+    },
+    {
+      "feature": "copd",
+      "development": 0.012066373988128789,
+      "test": 0.006738343226191809,
+      "smd": -0.0552287319733337
+    },
+    {
+      "feature": "immunosuppression",
+      "development": 0.009197145193429816,
+      "test": 0.004982931189673266,
+      "smd": -0.05024284638155804
+    },
+    {
+      "feature": "other_disease",
+      "development": 0.020488820791290566,
+      "test": 0.014146580223408535,
+      "smd": -0.04863167893005357
+    },
+    {
+      "feature": "asthma",
+      "development": 0.02379667045084668,
+      "test": 0.017082498558587705,
+      "smd": -0.04746384896167671
+    },
+    {
+      "feature": "comorbidity_missing",
+      "development": 0.006894220260446851,
+      "test": 0.009723207360120788,
+      "smd": 0.03116939990372243
+    },
+    {
+      "feature": "pregnant",
+      "development": 0.006464199804704556,
+      "test": 0.008382175433356977,
+      "smd": 0.0223456398457885
+    },
+    {
+      "feature": "female",
+      "development": 0.4963401951366671,
+      "test": 0.5072949979882447,
+      "smd": 0.02191105937721126
+    }
+  ],
+  "note": "Counts are on confirmed records (codes 1-3) in the raw files, before de-duplication and exclusions. 'Missing' includes 98 (unknown) and 99 (not specified), and 97 (not applicable) where the field applies."
+}

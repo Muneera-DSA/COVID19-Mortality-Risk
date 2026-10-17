@@ -1,0 +1,177 @@
+{
+  "n_sample": 100000,
+  "death_rate": 0.09424,
+  "features": [
+    "age",
+    "female",
+    "pregnant",
+    "diabetes",
+    "copd",
+    "asthma",
+    "immunosuppression",
+    "hypertension",
+    "other_disease",
+    "cardiovascular",
+    "obesity",
+    "chronic_kidney",
+    "smoking",
+    "pneumonia",
+    "pneumonia_missing",
+    "comorbidity_missing",
+    "days_symptoms_to_visit"
+  ],
+  "folds": 5,
+  "models": [
+    {
+      "model": "Histogram gradient boosting",
+      "seconds": 9.4,
+      "roc_auc": 0.9275493798157519,
+      "pr_auc": 0.5516311273254584,
+      "brier": 0.054831240619939756,
+      "roc_auc_sd": 0.002208868616680314,
+      "pr_auc_sd": 0.01114245280539943,
+      "brier_sd": 0.0007164600729223574
+    },
+    {
+      "model": "Random forest",
+      "seconds": 50.7,
+      "roc_auc": 0.9276722138141574,
+      "pr_auc": 0.5510377374951106,
+      "brier": 0.05499774459388386,
+      "roc_auc_sd": 0.0021592754854282688,
+      "pr_auc_sd": 0.009067891230674243,
+      "brier_sd": 0.0006099463044306256
+    },
+    {
+      "model": "Logistic regression",
+      "seconds": 2.1,
+      "roc_auc": 0.9264555234516081,
+      "pr_auc": 0.5498765730114876,
+      "brier": 0.05564854145241005,
+      "roc_auc_sd": 0.002496619157699759,
+      "pr_auc_sd": 0.009681277992004477,
+      "brier_sd": 0.0009137285729752661
+    },
+    {
+      "model": "LightGBM",
+      "seconds": 15.0,
+      "roc_auc": 0.9267203807540149,
+      "pr_auc": 0.5483966167142807,
+      "brier": 0.05510126710647735,
+      "roc_auc_sd": 0.0021013035941120986,
+      "pr_auc_sd": 0.010941272099791286,
+      "brier_sd": 0.000748912133529122
+    },
+    {
+      "model": "Neural network (MLP 32-16)",
+      "seconds": 32.6,
+      "roc_auc": 0.9266779607825407,
+      "pr_auc": 0.5460265305771674,
+      "brier": 0.055121749877286755,
+      "roc_auc_sd": 0.0027776104712421566,
+      "pr_auc_sd": 0.008151849932286195,
+      "brier_sd": 0.0007698646852618651
+    },
+    {
+      "model": "AdaBoost",
+      "seconds": 38.4,
+      "roc_auc": 0.9255357741280615,
+      "pr_auc": 0.5440574941836069,
+      "brier": 0.1265610740216305,
+      "roc_auc_sd": 0.0024126864648947237,
+      "pr_auc_sd": 0.011062666088137923,
+      "brier_sd": 0.0018878818061446887
+    },
+    {
+      "model": "Extra trees",
+      "seconds": 45.0,
+      "roc_auc": 0.9256356774194849,
+      "pr_auc": 0.5434239824764322,
+      "brier": 0.0555616540633832,
+      "roc_auc_sd": 0.002470222782329427,
+      "pr_auc_sd": 0.011997296251869169,
+      "brier_sd": 0.0005843052758668294
+    },
+    {
+      "model": "XGBoost",
+      "seconds": 15.2,
+      "roc_auc": 0.9256090939565258,
+      "pr_auc": 0.5390162552722425,
+      "brier": 0.05567953919967571,
+      "roc_auc_sd": 0.001693028230255626,
+      "pr_auc_sd": 0.014125652406773818,
+      "brier_sd": 0.0008181907578820222
+    },
+    {
+      "model": "LDA",
+      "seconds": 1.9,
+      "roc_auc": 0.9248140657324576,
+      "pr_auc": 0.5378825356667428,
+      "brier": 0.07362360687136058,
+      "roc_auc_sd": 0.0025378939487662442,
+      "pr_auc_sd": 0.014192470965114494,
+      "brier_sd": 0.0016729448183605202
+    },
+    {
+      "model": "Decision tree (depth 8)",
+      "seconds": 1.2,
+      "roc_auc": 0.9219602058694341,
+      "pr_auc": 0.5342090313369285,
+      "brier": 0.055745284920675445,
+      "roc_auc_sd": 0.002170434095413833,
+      "pr_auc_sd": 0.008471766963160512,
+      "brier_sd": 0.0005802604131386306
+    },
+    {
+      "model": "k-nearest neighbours (k=100)",
+      "seconds": 58.8,
+      "roc_auc": 0.9215141156939903,
+      "pr_auc": 0.5299092119025939,
+      "brier": 0.05600932799999999,
+      "roc_auc_sd": 0.0016188273604810814,
+      "pr_auc_sd": 0.00796326472435382,
+      "brier_sd": 0.0004932741470597225
+    },
+    {
+      "model": "Bernoulli naive Bayes",
+      "seconds": 0.4,
+      "roc_auc": 0.8873482995190572,
+      "pr_auc": 0.4549764637023137,
+      "brier": 0.0669994751948616,
+      "roc_auc_sd": 0.003951516962840532,
+      "pr_auc_sd": 0.013032247272970457,
+      "brier_sd": 0.0015608910470348623
+    },
+    {
+      "model": "QDA (regularised)",
+      "seconds": 1.9,
+      "roc_auc": 0.8927999073462125,
+      "pr_auc": 0.36494976051330363,
+      "brier": 0.1011578226799404,
+      "roc_auc_sd": 0.0032465579443157265,
+      "pr_auc_sd": 0.015074587867237052,
+      "brier_sd": 0.0026584920612832174
+    },
+    {
+      "model": "Gaussian naive Bayes",
+      "seconds": 0.3,
+      "roc_auc": 0.8888401928852524,
+      "pr_auc": 0.3560158632822244,
+      "brier": 0.10796683045474383,
+      "roc_auc_sd": 0.003303217485145271,
+      "pr_auc_sd": 0.014670883296838726,
+      "brier_sd": 0.0027345530258815567
+    },
+    {
+      "model": "Prior only (no information)",
+      "seconds": 0.1,
+      "roc_auc": 0.5,
+      "pr_auc": 0.09424,
+      "brier": 0.08535882262500002,
+      "roc_auc_sd": 0.0,
+      "pr_auc_sd": 2.2360679774995435e-05,
+      "brier_sd": 1.8145761514527367e-05
+    }
+  ],
+  "best": "Histogram gradient boosting"
+}
